@@ -1,3 +1,5 @@
+#CLI controller
+
 class Maangchis_cookbook::CLI 
   
   

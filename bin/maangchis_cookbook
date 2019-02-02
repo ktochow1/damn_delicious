@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
 
+require './lib/maangchis_cookbook' 
 Maangchis_cookbook::CLI.new.call
