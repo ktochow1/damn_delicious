@@ -1,1 +1,3 @@
 #!/usr/bin/env ruby
+
+Maangchis_cookbook::CLI.new.call
