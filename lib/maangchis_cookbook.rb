@@ -1,2 +1,2 @@
-require 'maangchis_cookbook/version'
-require 'maangchis_cookbook/cli'
+require_relative 'maangchis_cookbook/version'
+require_relative 'maangchis_cookbook/cli'

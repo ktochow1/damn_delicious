@@ -1,4 +1,13 @@
 #!/usr/bin/env ruby
 
-require './lib/maangchis_cookbook' 
-Maangchis_cookbook::CLI.new.call
+require '../lib/maangchis_cookbook' 
+Maangchis_cookbook::CLI.new.start
+
+
+#error when running ruby bin/maangchis_cookbook
+#/ ♥ ruby bin/maangchis_cookbook
+#/usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby/2.3.0
+#/rubygems/core_ext/kernel_require.rb:54:in `require': cannot load #such file -- ../lib/maangchis_cookbook (LoadError)
+        #from /usr/local/rvm/rubies/ruby-2.3.1/lib/ruby/site_ruby
+        #/2.3.0/rubygems/core_ext/kernel_require.rb:54:in #`require'
+       # from bin/maangchis_cookbook:3:in `<main>'
