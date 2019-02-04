@@ -3,7 +3,7 @@
 class Maangchis_cookbook::CLI 
   
   
-  def call 
+  def start 
     puts "Welcome to Maangchi's Cookbook!  "
   end
   
