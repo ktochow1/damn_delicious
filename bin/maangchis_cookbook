@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/maangchis_cookbook' 
-Maangchis_cookbook::CLI.new.start
+CLI.new.start
 
 
 #error when running ruby bin/maangchis_cookbook

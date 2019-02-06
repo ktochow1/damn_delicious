@@ -1,6 +1,6 @@
 #CLI controller
 
-class Maangchis_cookbook::CLI 
+class CLI 
   
   
   def start 
