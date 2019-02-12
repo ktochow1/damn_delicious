@@ -1,10 +1,9 @@
 class Scraper
 
   def self.scrape_categories(url)
-    binding.pry
     website = Nokogiri::HTML(open(url))
     section = website.css(".archives recipe-cats")
-
+    binding.pry
     # section.css("#main").css(".category-recipe")[0].css("a")[0].attr("title")
   end
 end

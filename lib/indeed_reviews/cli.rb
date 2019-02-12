@@ -15,7 +15,7 @@ class CLI
         puts "Soup Recipes"
       when "rice"
         puts "Rice Recipes"
-        url = "https://www.maangchi.com/recipes"
+        url = "https://www.maangchi.com/recipes/rice"
         Scraper.scrape_categories(url)
       when "exit"
         puts "Goodbye! Hope to see you soon!"
