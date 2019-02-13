@@ -1,4 +1,4 @@
-class Categories
+class JobReviewTypes
   attr_accessor :name, :url
 
   @@all = []

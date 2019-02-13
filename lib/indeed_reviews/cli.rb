@@ -4,21 +4,20 @@ class CLI
 
 
   def start
-    puts "Welcome to Maangchi's Cookbook!"
-    puts "What are you in the mood to cook today?"
-    puts "Please type: 'noodles', 'soup', or 'rice'."
+    puts "Welcome, let's explore some job reviews!"
+    puts "Today we'll explore popular and top-rated."
+    puts "Please type either 'popular' or 'top-rated'."
     input = gets.strip.downcase
-    case input
-    when "rice"
-        puts "Rice Recipes"
-      when "soup"
-        puts "Soup Recipes"
-      when "rice"
-        puts "Rice Recipes"
-        url = "https://www.maangchi.com/recipes/rice"
-        Scraper.scrape_categories(url)
-      when "exit"
-        puts "Goodbye! Hope to see you soon!"
+     case input
+     when "popular"
+         puts "Popular Jobs"
+       when "top-rated"
+         puts "Top-Rated Jobs"
+        url = "https://www.indeed.com/companies?from=headercmplink&attributionid=homepage"
+        job_types = Scraper.scrape_categories(url)
+        puts job_types
+       when "exit"
+         puts "Goodbye! Hope to see you soon!"
       else "Hmm, I'm not sure what you meant. Can you try again please?"
       end
     end

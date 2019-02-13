@@ -2,8 +2,22 @@ class Scraper
 
   def self.scrape_categories(url)
     website = Nokogiri::HTML(open(url))
-    section = website.css(".archives recipe-cats")
+    # section = website.css("div.cmp-FrontDoorWidget div.cmp-FrontDoorWidget-title")
+    sections_array = website.css("div.cmp-discovery-main.cmp-discovery-curated.clearfix div.cmp-FrontDoorWidget-title")#has two elements
+
+
+    sections_array.each do |section|
+      section.text
+
+    end
     binding.pry
+
+    # section.each do |section|
+    #   section.text
+    # end
+    # section[0].text
+    # section[1].text
+
     # section.css("#main").css(".category-recipe")[0].css("a")[0].attr("title")
   end
 end
