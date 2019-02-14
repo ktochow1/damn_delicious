@@ -1,7 +1,6 @@
-class JobReviewTypes
-  attr_accessor :name, :url
-
-  @@all = []
+class JobCategories
+attr_accessor :name, :url
+@@all = []
 
   def initialize(name, url)
     @name = name
@@ -9,8 +8,7 @@ class JobReviewTypes
     @@all << self
   end
 
-  def all
+  def self.all
     @@all
   end
-
 end
