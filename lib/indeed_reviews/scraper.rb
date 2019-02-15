@@ -3,6 +3,11 @@ class Scraper
   def self.scrape_cities(url)
     homepage = Nokogiri::HTML(open(url))
     job_container = homepage.css("div.cmp-SearchResultContainer div.cmp-CompanyListWidget")[0]
+    job_strip = homepage.css("div.cmp-SearchResultContainer div.cmp-CompanyListWidget div.clearfix.cmp-CompanyWidget div.cmp-CompanyWidget-links")[0]
+      #container of all job strips
+      review_link = job_strip.css("a")[0].attributes["href"].value
+
+
 
     # sections = homepage.css("div.cmp-discovery-main") #1 item in array
     # pop_city_comp = ("div.cmp-FooterContainer div.icl-Grid div.div.cmp-LinksWidget") #.icl-Grid-col.icl-u-xs-span4

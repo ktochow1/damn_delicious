@@ -1,4 +1,4 @@
-class JobCategories
+class City
 attr_accessor :name, :url
 @@all = []
 
