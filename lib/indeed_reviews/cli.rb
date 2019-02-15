@@ -19,7 +19,9 @@ class CLI
            puts "In Boston"
           url = "https://www.indeed.com/cmp?l=Boston%2C+MA"
           job_cities = Scraper.scrape_cities(url)
-
+           puts job_cities[3].name
+           puts job_cities[3].url
+           # binding.pry
          when "exit"
            puts "Goodbye! Hope to see you soon!"
         else "Hmm, I'm not sure what you meant. Try again or type 'exit'."
