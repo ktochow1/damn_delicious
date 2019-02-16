@@ -57,11 +57,11 @@ class CLI
       job_cities = Scraper.scrape_cities(url)
     end
 
-    def list_jobs
-      JobReviews.new.all.each_with_index(1) do |job, index|
-        puts "#{index}. #{job.name}"
-      end
-    end
+    # def list_jobs
+    #   JobReviews.new.all.each_with_index(1) do |job, index|
+    #     puts "#{index}. #{job.name}"
+    #   end
+    # end
 
 end
 

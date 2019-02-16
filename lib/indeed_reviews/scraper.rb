@@ -2,10 +2,23 @@ class Scraper
 
   def self.scrape_cities(url)
     homepage = Nokogiri::HTML(open(url))
-    job_container = homepage.css("div.cmp-SearchResultContainer div.cmp-CompanyListWidget")[0]
+    job_container = homepage.css("div.cmp-SearchResultContainer div.cmp-CompanyListWidget")#[0]
     job_strip_array = job_container.css(".clearfix.cmp-CompanyWidget")
-    review_link = job_strip_array.css("div.cmp-CompanyWidget-links")[0].children[0].attributes["href"].value # job_container.css("a")[0].attributes["href"].value
-    binding.pry
+    # review_link = job_strip_array.css("div.cmp-CompanyWidget-links")[0].children[0].attributes["href"].value # job_container.css("a")[0].attributes["href"].value
+
+    job_container.each do |strip|
+      strip = strip.css(".clearfix.cmp-CompanyWidget")
+        strip.each.with_index(1) do |job, index|
+          puts "#{index}. #{job.css(".cmp-CompanyWidget-name").text}"
+        end
+       # binding.pry
+    end
+
+    new_job = JobReviews.new(job_strip_array.css("div.cmp-CompanyWidget-details a")[0].children[0].text, job_strip_array.css("div.cmp-CompanyWidget-links")[0].children[0].attributes["href"].value)
+    
+    # binding.pry
+
+
 
     #is it possible to iterate through the job_container and extract the name and url of each job??
     #will it have to be a nested iteration?
