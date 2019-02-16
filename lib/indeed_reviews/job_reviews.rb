@@ -5,7 +5,7 @@ class JobReviews
 
   def initialize(name, url)
     @name = name
-    @url = url
+    @url = "https://www.indeed.com" + url
     @@all << self
   end
 
