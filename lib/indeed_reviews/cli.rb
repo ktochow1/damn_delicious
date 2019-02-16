@@ -16,16 +16,19 @@ class CLI
          when "new york city"
              puts "In New York City"
              scrape_nyc
-           when "los angeles"
+             puts "\nPlease select the number which corresponds with the job you'd like you read reviews for."
+           when "la"
              puts "In Los Angeles"
              scrape_la
+             puts "\nPlease select the number which corresponds with the job you'd like you read reviews for."
            when "chicago"
              puts "In Chicago"
              scrape_chicago
+             puts "\nPlease select the number which corresponds with the job you'd like you read reviews for."
            when "boston"
              puts "In Boston"
              scrape_boston
-
+             puts "\nPlease select the number which corresponds with the job you'd like you read reviews for."
            when "exit"
              puts "Goodbye! Hope to see you soon!"
           else
@@ -36,25 +39,25 @@ class CLI
 
     def scrape_nyc
       url = "https://www.indeed.com/cmp?l=New+York%2C+NY"
-      job_cities = Scraper.scrape_cities(url)
+      job_cities = Scraper.scrape_jobs(url)
       # puts  job_cities[0]
       # binding.pry
     end
 
     def scrape_boston
       url = "https://www.indeed.com/cmp?l=Boston%2C+MA"
-      job_cities = Scraper.scrape_cities(url)
+      job_cities = Scraper.scrape_jobs(url)
       # binding.pry
     end
 
     def scrape_la
-      job_cities = Scraper.scrape_cities(url)
       url = "https://www.indeed.com/cmp?l=Los+Angeles%2C+CA"
+      job_cities = Scraper.scrape_jobs(url)
     end
 
     def scrape_chicago
       url = "https://www.indeed.com/cmp?l=Chicago%2C+IL"
-      job_cities = Scraper.scrape_cities(url)
+      job_cities = Scraper.scrape_jobs(url)
     end
 
     # def list_jobs

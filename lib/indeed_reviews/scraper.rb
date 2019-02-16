@@ -1,6 +1,6 @@
 class Scraper
 
-  def self.scrape_cities(url)
+  def self.scrape_jobs(url)
     homepage = Nokogiri::HTML(open(url))
     job_container = homepage.css("div.cmp-SearchResultContainer div.cmp-CompanyListWidget")#[0]
     job_strip_array = job_container.css(".clearfix.cmp-CompanyWidget")
@@ -9,13 +9,17 @@ class Scraper
     job_container.each do |strip|
       strip = strip.css(".clearfix.cmp-CompanyWidget")
         strip.each.with_index(1) do |job, index|
-          puts "#{index}. #{job.css(".cmp-CompanyWidget-name").text}"
+          puts "#{index}. #{JobReviews.new(job.css(".cmp-CompanyWidget-details a.cmp-CompanyWidget-name").text, job.css("div.cmp-CompanyWidget-links").text).name}" 
         end
-       # binding.pry
-    end
 
-    new_job = JobReviews.new(job_strip_array.css("div.cmp-CompanyWidget-details a")[0].children[0].text, job_strip_array.css("div.cmp-CompanyWidget-links")[0].children[0].attributes["href"].value)
-    
+    end
+  end
+
+
+
+
+    # new_job = JobReviews.new(job_strip_array.css("div.cmp-CompanyWidget-details a")[0].children[0].text, job_strip_array.css("div.cmp-CompanyWidget-links")[0].children[0].attributes["href"].value)
+
     # binding.pry
 
 
@@ -24,11 +28,7 @@ class Scraper
     #will it have to be a nested iteration?
 
 
-    # job_strip_array.each.with_index(1) do |strip, index|
-    #   JobReviews.new(job_strip_array.css("div.cmp-CompanyWidget-details a")[0].children[0].text, job_strip_array.css("div.cmp-CompanyWidget-links")[0].children[0].attributes["href"].value)
-    #   puts "#{index}. #{strip.name}"
-    #    # binding.pry
-    # end
+
 
 
       # binding.pry
@@ -56,7 +56,7 @@ class Scraper
     # popular_companies("div.cmp-discovery-main div.cmp-FrontDoorWidget div.cmp-PopularCompaniesWidget-companyDetailWrapper")
 
 #.attribute["href"].value
-  end
+
 
 
     # def list_categories
@@ -76,8 +76,4 @@ class Scraper
     # sections_array.map do |section|
     #
     #   JobCategories.new(sesction.text)
-    # end
-
-
-
-end
+    end
