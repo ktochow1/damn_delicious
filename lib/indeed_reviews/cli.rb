@@ -16,24 +16,30 @@ class CLI
          when "new york city"
              puts "In New York City"
              scrape_nyc
-             puts "\nPlease select the number which corresponds with the job you'd like you read reviews for."
+             choose_job
+
+            # max_value = JobReviews.all.length
+            # if number.between?(1, max_value)
+            #   jobs = JobReviews.all[number-1]
+            #   display_reviews(jobs)
            when "la"
              puts "In Los Angeles"
              scrape_la
-             puts "\nPlease select the number which corresponds with the job you'd like you read reviews for."
+             choose_job
            when "chicago"
              puts "In Chicago"
              scrape_chicago
-             puts "\nPlease select the number which corresponds with the job you'd like you read reviews for."
+             choose_job
            when "boston"
              puts "In Boston"
              scrape_boston
-             puts "\nPlease select the number which corresponds with the job you'd like you read reviews for."
-           when "exit"
+             choose_job
+          when "exit"
              puts "Goodbye! Hope to see you soon!"
           else
             puts "Hmm, I'm not sure what you meant. Try again or type 'exit'."
             menu
+          end
         end
       end
 
@@ -60,31 +66,18 @@ class CLI
       job_cities = Scraper.scrape_jobs(url)
     end
 
+    def choose_job
+      puts "\nType the number associated with the company name to read employee reviews."
+      input = gets.strip.to_i
+      max = JobReviews.all.length
+      if input.between?(1, max)
+      else puts "Invalid input, please try again."
+        choose_job
+      end
+    end
+
     # def list_jobs
     #   JobReviews.new.all.each_with_index(1) do |job, index|
     #     puts "#{index}. #{job.name}"
     #   end
     # end
-
-end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#d

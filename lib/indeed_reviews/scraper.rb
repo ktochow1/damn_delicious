@@ -9,10 +9,14 @@ class Scraper
     job_container.each do |strip|
       strip = strip.css(".clearfix.cmp-CompanyWidget")
         strip.each.with_index(1) do |job, index|
-          puts "#{index}. #{JobReviews.new(job.css(".cmp-CompanyWidget-details a.cmp-CompanyWidget-name").text, job.css("div.cmp-CompanyWidget-links").text).name}" 
+          puts "#{index}. #{JobReviews.new(job.css(".cmp-CompanyWidget-details a.cmp-CompanyWidget-name").text, job.css("div.cmp-CompanyWidget-links").text).name}"
         end
+      end
 
-    end
+      def self.scrape_reviews(jobs)
+        homepage = Nokogiri::HTML(open(url))
+
+      end
   end
 
 
