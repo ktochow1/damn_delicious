@@ -17,8 +17,9 @@ class Scraper
         rev_homepage = Nokogiri::HTML(open(job.url))
         # binding.pry
         reviews_arr = rev_homepage.css(".cmp-review-description .cmp-review-text")
-        reviews_arr.each do |review|
-          puts "\n#{review.text}"
+
+        reviews_arr.each.with_index(1) do |review, index|
+          puts "\n#{index}. #{review.text}"
         end
       end
 

@@ -23,7 +23,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This CLI application scrapes reviews based on specific cities off of Indeed.com.
+First, type in the name of one of the cities provided, wait for the following list of jobs associated with
+each city, and select the number next to the job you're most curious about. A list of reviews will pop up,
+and from there you're free to explore more jobs in the same city or elsewhere!
 
 ## Development
 
