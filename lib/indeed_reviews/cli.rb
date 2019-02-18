@@ -5,7 +5,7 @@ class CLI
 
   def start
     puts "Welcome, let's explore some job reviews around the country!"
-    puts "We'll be looking in New York City, Los Angeles, Chicago, and Boston!"
+    puts "We'll be looking in New York City, LA, Chicago, and Boston!"
     menu
   end
 
@@ -13,17 +13,12 @@ class CLI
       puts "Please enter the city you wish to explore reviews."
       input = gets.strip.downcase
        case input
-         when "new york city"
+       when "new york city"
              puts "In New York City"
              scrape_nyc
              choose_job
-
-            # max_value = JobReviews.all.length
-            # if number.between?(1, max_value)
-            #   jobs = JobReviews.all[number-1]
-            #   display_reviews(jobs)
            when "la"
-             puts "In Los Angeles"
+             puts "In LA"
              scrape_la
              choose_job
            when "chicago"
@@ -71,9 +66,15 @@ class CLI
       input = gets.strip.to_i
       max = JobReviews.all.length
       if input.between?(1, max)
+        job = JobReviews.all[input-1]
+        display_reviews(job)
       else puts "Invalid input, please try again."
         choose_job
       end
+    end
+
+    def display_reviews(job)
+      Scraper.scrape_reviews(job)
     end
 
     # def list_jobs
