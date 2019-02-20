@@ -6,6 +6,6 @@ require "pry" #pry not working
 require_relative 'indeed_reviews/scraper'
 require_relative 'indeed_reviews/cli'
 require_relative 'indeed_reviews/job_reviews'
-require_relative 'indeed_reviews/city'
+# require_relative 'indeed_reviews/city'
 
 # require_relative 'indeed_reviews/cookbook'

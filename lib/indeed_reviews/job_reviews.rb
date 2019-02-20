@@ -13,4 +13,11 @@ class JobReviews
     @@all
   end
 
+  def self.list_jobs
+    @@all.each.with_index(1) do |job, index|
+      puts "#{index}. #{job.name}"
+
+    end
+  end
+
 end

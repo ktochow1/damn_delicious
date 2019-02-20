@@ -7,4 +7,4 @@
 #include rating of each review and title
 #make it look more stylized and easier to read
 #at the end of each review, ask user if they'd like to explore more jobs, from which city, or if they'd like
-#to expit 
+#to expit
