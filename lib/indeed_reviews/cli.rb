@@ -42,28 +42,21 @@ class CLI
     def scrape_nyc
       url = "https://www.indeed.com/cmp?l=New+York%2C+NY"
       job_cities = Scraper.scrape_jobs(url)
-      # choose_job
     end
 
     def scrape_boston
       url = "https://www.indeed.com/cmp?l=Boston%2C+MA"
       job_cities = Scraper.scrape_jobs(url)
-      # choose_job
-      # go_back
     end
 
     def scrape_la
       url = "https://www.indeed.com/cmp?l=Los+Angeles%2C+CA"
       job_cities = Scraper.scrape_jobs(url)
-      # choose_job
-      # go_back
     end
 
     def scrape_chicago
       url = "https://www.indeed.com/cmp?l=Chicago%2C+IL"
       job_cities = Scraper.scrape_jobs(url)
-      # choose_job
-      # go_back
     end
 
     def choose_job
@@ -108,32 +101,3 @@ class CLI
         end
       end
     end
-
-
-
-          # JobReviews.choose_job
-
-
-
-
-#       case new_input
-#         when "yes"
-#           list_jobs
-#           choose_job
-#         when "no"
-#           puts "Would you like to visit a new city?"
-#           new_input2 = gets.strip.downcase
-#           case new_input2
-#             when "yes"
-#              start
-#             when "no"
-#              puts "No worries! Bye for now and come back soon!"
-#         else
-#           puts "Hm, not sure what you meant. Please try again."
-#           go_back
-#         end
-#       end
-#      end
-#   end
-# end
-# end
