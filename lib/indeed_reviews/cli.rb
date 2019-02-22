@@ -1,15 +1,13 @@
-#CLI controller
-
 class CLI
 
 
-  def start #greets user, describes what app does -
+  def start
     puts "\nWelcome, let's explore some job reviews around the country!"
     puts "\nWe'll be looking in New York City, LA, Chicago, and Boston!"
     menu
   end
 
-    def menu # interaction with user, scraping cities
+    def menu
       puts "\nPlease enter the city you wish to explore reviews."
       input = gets.strip.downcase
        case input
@@ -29,8 +27,7 @@ class CLI
              puts "\nIn Boston"
              scrape_boston
              choose_job
-
-          when "exit"
+           when "exit"
              puts "\nGoodbye! Hope to see you soon!"
           else
             puts "\nHmm, I'm not sure what you meant. Try again or type 'exit'."

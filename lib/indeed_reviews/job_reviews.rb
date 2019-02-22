@@ -1,5 +1,5 @@
 class JobReviews
-  attr_accessor :name, :url, :description, :price, :rating
+  attr_accessor :name, :url
 
   @@all = []
 
